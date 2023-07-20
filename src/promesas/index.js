@@ -15,4 +15,7 @@ const countCows = new Promise((resolve, reject) => {
 // Ejecutar la promesa
 countCows.then((result) => {
   console.log(result);
+  // Manejo de errores
+}).catch((error) => {
+  console.log(error);
 });
