@@ -1,10 +1,10 @@
 //xmlhttprequest
-import { XMLHttpRequest } from "xmlhttprequest";
+const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
-const API_URL = "https://fakeapi.platzi.com/api/v1";
+const API_URL = "https://fakeapi.platzi.com/api/v1/";
 
 function fetchData(urlApi, callback) {
-  const xhttp = new XMLHttpRequest();
+  let xhttp = new XMLHttpRequest();
   // Inicia la conexion
   xhttp.open("GET", urlApi, true);
   // ¿Cuando esta disponible la informacion?
