@@ -1,7 +1,7 @@
 //xmlhttprequest
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
-const API_URL = "https://fakeapi.platzi.com/api/v1/";
+const API_URL = "https://api.escuelajs.co/api/v1";
 
 function fetchData(urlApi, callback) {
   let xhttp = new XMLHttpRequest();
@@ -43,4 +43,5 @@ fetchData(`${API_URL}/products`, function (error1, data1) {
       console.log(data3.name);
     });
   });
-})
+});
+// El ejemplo anterior es un Callback Hell - Mejor usa Async - Await
