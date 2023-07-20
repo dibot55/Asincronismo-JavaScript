@@ -25,3 +25,22 @@ function fetchData(urlApi, callback) {
   // Enviar la peticion
   xhttp.send();
 }
+// Fetch data
+fetchData(`${API_URL}/products`, function (error1, data1) {
+  // Error 1 en caso de tener un error al hacer la peticion
+  if (error1) return console.error(error1);
+  // En caso de que la peticion sea correcta, llamamos a un elemento con un indice
+  fetchData(`${API_URL}/products/${data1[0].id}`, function (error2, data2) {
+    // Si hay un error al hacer la peticion con un indice
+    if (error2) return console.error(error2);
+    // Hacer una peticion a otro endpoint
+    fetchData(`${API_URL}/categories/${data2?.category?.id}`, function (error3, data3) { // ? optional shading - por si no existe el endpoint como lo escribimos
+      // Si hay un error al hacer la peticion
+      if (error3) return console.error(error3);
+      // Imprimir los resultados de las peticiones en consola
+      console.log(data1[0]);
+      console.log(data2.title);
+      console.log(data3.name);
+    });
+  });
+})
