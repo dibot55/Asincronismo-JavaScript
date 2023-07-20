@@ -9,7 +9,7 @@ const countCows = new Promise((resolve, reject) => {
   if(cow > 10){
     resolve("Minimo deseado");
   } else {
-    reject("Rechazado")
+    reject("Rechazado");
   }
 });
 // Ejecutar la promesa
@@ -18,4 +18,6 @@ countCows.then((result) => {
   // Manejo de errores
 }).catch((error) => {
   console.log(error);
-});
+}).finally(() => {
+  console.log("Terminado")
+})
